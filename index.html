@@ -54,19 +54,33 @@
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             color: white;
             text-align: center;
             margin-bottom: 30px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: pulse 2s infinite;
+            line-height: 1.2;
         }
 
         h2 {
-            font-size: 2.5em;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             color: white;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         @keyframes pulse {
@@ -81,7 +95,7 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 30px;
+            padding: clamp(20px, 4vw, 30px);
             margin: 20px 0;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
@@ -89,7 +103,7 @@
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-5px) scale(1.01);
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
@@ -105,7 +119,7 @@
         }
 
         .emoji-big {
-            font-size: 4em;
+            font-size: clamp(2rem, 6vw, 4rem);
             text-align: center;
             margin: 20px 0;
             animation: bounce 2s infinite;
@@ -125,15 +139,15 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(15px, 3vw, 20px);
             margin: 30px 0;
         }
 
         .feature-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 25px;
+            padding: clamp(20px, 4vw, 25px);
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
@@ -141,23 +155,24 @@
         }
 
         .feature-box:hover {
-            transform: rotate(5deg) scale(1.1);
+            transform: rotate(2deg) scale(1.05);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .pipeline-visual {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             margin: 40px 0;
+            gap: 15px;
         }
 
         .pipeline-step {
             background: white;
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            width: clamp(100px, 15vw, 150px);
+            height: clamp(100px, 15vw, 150px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -166,6 +181,9 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             animation: float 3s ease-in-out infinite;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            text-align: center;
+            padding: 10px;
         }
 
         .pipeline-step:nth-child(2) {
@@ -186,7 +204,7 @@
         }
 
         .arrow {
-            font-size: 2em;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             color: white;
             margin: 0 10px;
             animation: moveRight 1.5s infinite;
@@ -206,18 +224,22 @@
             justify-content: space-around;
             flex-wrap: wrap;
             margin: 30px 0;
+            gap: 15px;
         }
 
         .stat-item {
             text-align: center;
             margin: 15px;
+            flex: 1;
+            min-width: 150px;
         }
 
         .stat-number {
-            font-size: 3em;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: bold;
             color: #667eea;
             animation: countUp 2s ease-out;
+            line-height: 1;
         }
 
         @keyframes countUp {
@@ -237,39 +259,42 @@
             overflow: hidden;
             margin: 30px 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 600px;
         }
 
         th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px;
+            padding: clamp(10px, 3vw, 15px);
             text-align: left;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
         }
 
         td {
-            padding: 15px;
+            padding: clamp(10px, 3vw, 15px);
             border-bottom: 1px solid #eee;
+            font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
         tr:hover {
             background: #f5f5f5;
-            transform: scale(1.02);
             transition: all 0.3s ease;
         }
 
         .button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: clamp(10px, 3vw, 15px) clamp(20px, 5vw, 40px);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1.2em;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             cursor: pointer;
@@ -286,18 +311,19 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: clamp(10px, 2vw, 15px);
             margin: 30px 0;
         }
 
         .tech-badge {
             background: white;
             color: #667eea;
-            padding: 10px 20px;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
             border-radius: 20px;
             font-weight: bold;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
         .tech-badge:hover {
@@ -309,7 +335,7 @@
         .progress-bar {
             background: #e0e0e0;
             border-radius: 20px;
-            height: 30px;
+            height: clamp(25px, 4vw, 30px);
             margin: 15px 0;
             overflow: hidden;
         }
@@ -325,6 +351,7 @@
             color: white;
             font-weight: bold;
             animation: fillBar 2s ease-out;
+            font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
         @keyframes fillBar {
@@ -362,25 +389,27 @@
             justify-content: center;
             margin: 40px 0;
             position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .approach-box {
             background: white;
-            padding: 20px;
+            padding: clamp(15px, 3vw, 20px);
             border-radius: 15px;
-            margin: 0 20px;
+            margin: 0 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
-            width: 250px;
+            width: clamp(200px, 40vw, 250px);
             text-align: center;
         }
 
         .approach-box:hover {
-            transform: scale(1.1) rotate(2deg);
+            transform: scale(1.05) rotate(1deg);
         }
 
         .merge-icon {
-            font-size: 3em;
+            font-size: clamp(2rem, 4vw, 3rem);
             animation: spin 3s linear infinite;
         }
 
@@ -393,19 +422,152 @@
             }
         }
 
+        /* Mobile-specific improvements */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
+            .slide {
+                padding: 40px 15px;
+                min-height: 100vh;
             }
-            h2 {
-                font-size: 1.5em;
+            
+            .container {
+                width: 95%;
             }
-            .pipeline-step {
-                width: 100px;
-                height: 100px;
+
+            .pipeline-visual {
+                flex-direction: column;
+                align-items: center;
             }
+
+            .arrow {
+                transform: rotate(90deg);
+                margin: 15px 0;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-item {
+                margin: 10px 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .tech-stack {
+                gap: 8px;
+            }
+
+            .tech-badge {
+                padding: 8px 12px;
+            }
+
             .nav-dots {
                 display: none;
+            }
+
+            .comparison-table {
+                margin: 20px -15px;
+                border-radius: 0;
+            }
+
+            .hybrid-diagram {
+                flex-direction: column;
+            }
+
+            .approach-box {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .feature-box:hover {
+                transform: scale(1.02);
+            }
+
+            .card:hover {
+                transform: translateY(-2px) scale(1.01);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                padding: 30px 10px;
+            }
+
+            .pipeline-step {
+                width: 80px;
+                height: 80px;
+                font-size: 0.75rem;
+            }
+
+            .emoji-big {
+                font-size: 2.5rem;
+            }
+
+            .merge-icon {
+                font-size: 2rem;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .card {
+                box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            }
+            
+            .feature-box {
+                box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .slide {
+                min-height: auto;
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            
+            .emoji-big {
+                font-size: 2rem;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablet specific styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pipeline-step {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .feature-box:hover,
+            .card:hover,
+            .approach-box:hover,
+            .tech-badge:hover {
+                transform: none;
+            }
+            
+            .feature-box:active {
+                transform: scale(0.98);
+            }
+            
+            .button:active {
+                transform: translateY(0);
             }
         }
     </style>
@@ -418,7 +580,7 @@
             <h1>AI Pipeline Revolution</h1>
             <div class="card">
                 <h2 style="color: #667eea; text-align: center;">Перетворюємо хаос даних на золото інсайтів!</h2>
-                <p style="text-align: center; font-size: 1.3em; margin: 20px 0;">
+                <p style="text-align: center; font-size: clamp(1rem, 3vw, 1.3rem); margin: 20px 0;">
                     Як LLM допомагає e-commerce бізнесу використовувати 100% своїх даних для прийняття рішень
                 </p>
                 <div class="stats">
@@ -472,17 +634,17 @@
             <h1>💼 Реальні кейси використання</h1>
             <div class="grid">
                 <div class="feature-box">
-                    <div style="font-size: 3em;">🛍️</div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem);">🛍️</div>
                     <h3>Amazon</h3>
                     <p>Аналіз відгуків покупців → Покращення продуктів на 35%</p>
                 </div>
                 <div class="feature-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <div style="font-size: 3em;">📧</div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem);">📧</div>
                     <h3>Gmail</h3>
                     <p>Smart Reply → Економія 2.5 млрд годин на рік</p>
                 </div>
                 <div class="feature-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <div style="font-size: 3em;">🏦</div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem);">🏦</div>
                     <h3>JP Morgan</h3>
                     <p>Аналіз контрактів → 360,000 годин роботи за секунди</p>
                 </div>
@@ -491,17 +653,17 @@
                 <h3 style="color: #667eea; text-align: center;">🎯 Наш фокус: E-commerce</h3>
                 <div class="pipeline-visual">
                     <div class="pipeline-step">
-                        <div style="font-size: 2em;">📝</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📝</div>
                         <div>Відгуки</div>
                     </div>
                     <div class="arrow">→</div>
                     <div class="pipeline-step">
-                        <div style="font-size: 2em;">💬</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">💬</div>
                         <div>Чати</div>
                     </div>
                     <div class="arrow">→</div>
                     <div class="pipeline-step">
-                        <div style="font-size: 2em;">📊</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📊</div>
                         <div>Інсайти</div>
                     </div>
                 </div>
@@ -571,25 +733,25 @@
                 <h2 style="color: #667eea; text-align: center;">Архітектура системи</h2>
                 <div class="pipeline-visual">
                     <div class="pipeline-step" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                        <div style="font-size: 2em;">📥</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📥</div>
                         <div>Data Input</div>
                         <small>Всі типи даних</small>
                     </div>
                     <div class="arrow">→</div>
                     <div class="pipeline-step" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
-                        <div style="font-size: 2em;">🤖</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">🤖</div>
                         <div>LLM Agent</div>
                         <small>GPT/Claude/Gemini</small>
                     </div>
                     <div class="arrow">→</div>
                     <div class="pipeline-step" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
-                        <div style="font-size: 2em;">🏷️</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">🏷️</div>
                         <div>Categorization</div>
                         <small>Smart Labels</small>
                     </div>
                     <div class="arrow">→</div>
                     <div class="pipeline-step" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white;">
-                        <div style="font-size: 2em;">📊</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📊</div>
                         <div>ML Models</div>
                         <small>Predictions</small>
                     </div>
@@ -610,7 +772,7 @@
             </div>
         </div>
     </section>
-
+            
     <!-- Slide 6: Two Approaches -->
     <section class="slide">
         <div class="container">
