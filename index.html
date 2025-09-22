@@ -453,6 +453,44 @@
   transform: translateX(1px);
   transition: transform 160ms ease;
 }
+        /* Адаптив для timeline */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .timeline-step {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .timeline-emoji {
+    transform: rotate(90deg); /* робимо стрілку вниз */
+    margin: 10px 0;
+    font-size: 2rem;
+  }
+
+  .timeline-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-icon {
+    font-size: 1.5rem;
+  }
+
+  .timeline-text {
+    font-size: 0.9rem;
+  }
+
+  .timeline-emoji {
+    font-size: 1.5rem;
+  }
+}
+
     </style>
 </head>
 <body>
