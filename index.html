@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 AI Pipeline для E-commerce</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🚀 AI Pipeline для E-commerce — Final</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,14 +39,8 @@
         }
 
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
@@ -78,19 +68,12 @@
         }
 
         p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            line-height: 1.6;
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            line-height: 1.65;
             margin-bottom: 15px;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
+        @keyframes pulse { 0%,100% {transform: scale(1);} 50% {transform: scale(1.05);} }
 
         .card {
             background: rgba(255, 255, 255, 0.95);
@@ -107,16 +90,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+        @keyframes fadeIn { from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);} }
 
         .emoji-big {
             font-size: clamp(2rem, 6vw, 4rem);
@@ -126,15 +100,9 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
+            0%,20%,50%,80%,100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
 
         .grid {
@@ -171,8 +139,8 @@
         .pipeline-step {
             background: white;
             border-radius: 50%;
-            width: clamp(200px, 15vw, 150px);
-            height: clamp(200px, 15vw, 150px);
+            width: clamp(120px, 15vw, 160px);
+            height: clamp(120px, 15vw, 160px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -186,22 +154,10 @@
             padding: 10px;
         }
 
-        .pipeline-step:nth-child(2) {
-            animation-delay: 0.5s;
-        }
+        .pipeline-step:nth-child(2) { animation-delay: 0.5s; }
+        .pipeline-step:nth-child(3) { animation-delay: 1s; }
 
-        .pipeline-step:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
+        @keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-20px);} }
 
         .arrow {
             font-size: clamp(1.5rem, 3vw, 2rem);
@@ -210,14 +166,7 @@
             animation: moveRight 1.5s infinite;
         }
 
-        @keyframes moveRight {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(10px);
-            }
-        }
+        @keyframes moveRight { 0%,100% {transform: translateX(0);} 50% {transform: translateX(10px);} }
 
         .stats {
             display: flex;
@@ -242,16 +191,7 @@
             line-height: 1;
         }
 
-        @keyframes countUp {
-            from {
-                opacity: 0;
-                transform: scale(0);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+        @keyframes countUp { from {opacity: 0; transform: scale(0);} to {opacity: 1; transform: scale(1);} }
 
         .comparison-table {
             background: white;
@@ -262,12 +202,7 @@
             overflow-x: auto;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
         th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -275,16 +210,18 @@
             text-align: left;
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
         }
-
         td {
             padding: clamp(10px, 3vw, 15px);
             border-bottom: 1px solid #eee;
-            font-size: clamp(0.8rem, 2vw, 1rem);
+            font-size: clamp(0.85rem, 2vw, 1rem);
         }
 
-        tr:hover {
-            background: #f5f5f5;
-            transition: all 0.3s ease;
+        /* Менш агресивний hover за замовчуванням */
+        tr:hover { background: #f5f5f5; transition: all 0.3s ease; }
+
+        /* На десктопах додаємо легкий scale для рядків таблиці (сильна сторона index1) */
+        @media (hover: hover) and (pointer: fine) {
+            tr:hover { transform: scale(1.01); }
         }
 
         .button {
@@ -302,10 +239,7 @@
             margin: 10px;
         }
 
-        .button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+        .button:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         .tech-stack {
             display: flex;
@@ -326,11 +260,7 @@
             font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
-        .tech-badge:hover {
-            transform: rotate(-5deg) scale(1.1);
-            background: #667eea;
-            color: white;
-        }
+        .tech-badge:hover { transform: rotate(-5deg) scale(1.1); background: #667eea; color: white; }
 
         .progress-bar {
             background: #e0e0e0;
@@ -354,34 +284,7 @@
             font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
-        @keyframes fillBar {
-            from {
-                width: 0%;
-            }
-        }
-
-        .nav-dots {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            margin: 10px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot:hover, .dot.active {
-            background: white;
-            transform: scale(1.5);
-        }
+        @keyframes fillBar { from { width: 0%; } }
 
         .hybrid-diagram {
             display: flex;
@@ -400,496 +303,595 @@
             margin: 0 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
-            width: clamp(200px, 40vw, 250px);
+            width: clamp(200px, 40vw, 260px);
             text-align: center;
         }
 
-        .approach-box:hover {
-            transform: scale(1.05) rotate(1deg);
-        }
+        .approach-box:hover { transform: scale(1.05) rotate(1deg); }
 
-        .merge-icon {
-            font-size: clamp(2rem, 4vw, 3rem);
-            animation: spin 3s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        .merge-icon { font-size: clamp(2rem, 4vw, 3rem); animation: spin 3s linear infinite; }
+        @keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
 
         /* Mobile-specific improvements */
         @media (max-width: 768px) {
-            .slide {
-                padding: 40px 15px;
-                min-height: 100vh;
-            }
-            
-            .container {
-                width: 95%;
-            }
-
-            .pipeline-visual {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .arrow {
-                transform: rotate(90deg);
-                margin: 15px 0;
-            }
-
-            .stats {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stat-item {
-                margin: 10px 0;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .tech-stack {
-                gap: 8px;
-            }
-
-            .tech-badge {
-                padding: 8px 12px;
-            }
-
-            .nav-dots {
-                display: none;
-            }
-
-            .comparison-table {
-                margin: 20px -15px;
-                border-radius: 0;
-            }
-
-            .hybrid-diagram {
-                flex-direction: column;
-            }
-
-            .approach-box {
-                width: 100%;
-                margin: 10px 0;
-            }
-
-            .feature-box:hover {
-                transform: scale(1.02);
-            }
-
-            .card:hover {
-                transform: translateY(-2px) scale(1.01);
-            }
+            .slide { padding: 40px 15px; min-height: 100vh; }
+            .container { width: 95%; }
+            .pipeline-visual { flex-direction: column; align-items: center; }
+            .arrow { transform: rotate(90deg); margin: 15px 0; }
+            .stats { flex-direction: column; align-items: center; }
+            .stat-item { margin: 10px 0; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .tech-stack { gap: 8px; }
+            .tech-badge { padding: 8px 12px; }
         }
 
         @media (max-width: 480px) {
-            .slide {
-                padding: 30px 10px;
-            }
-
-            .pipeline-step {
-                width: 80px;
-                height: 80px;
-                font-size: 0.75rem;
-            }
-
-            .emoji-big {
-                font-size: 2.5rem;
-            }
-
-            .merge-icon {
-                font-size: 2rem;
-            }
+            .slide { padding: 30px 10px; }
+            .pipeline-step { width: 90px; height: 90px; font-size: 0.8rem; }
+            .emoji-big { font-size: 2.5rem; }
+            .merge-icon { font-size: 2rem; }
         }
 
         /* High DPI displays */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .card {
-                box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            }
-            
-            .feature-box {
-                box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-            }
+            .card { box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+            .feature-box { box-shadow: 0 3px 15px rgba(0,0,0,0.2); }
         }
 
         /* Landscape mobile orientation */
         @media (max-height: 500px) and (orientation: landscape) {
-            .slide {
-                min-height: auto;
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-            
-            .emoji-big {
-                font-size: 2rem;
-                margin: 10px 0;
-            }
+            .slide { min-height: auto; padding: 20px 15px; }
+            h1 { font-size: 2rem; margin-bottom: 15px; }
+            .emoji-big { font-size: 2rem; margin: 10px 0; }
         }
 
         /* Tablet specific styles */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .pipeline-step {
-                width: 200px;
-                height: 200px;
-            }
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .pipeline-step { width: 180px; height: 180px; }
         }
 
         /* Touch device improvements */
         @media (hover: none) and (pointer: coarse) {
-            .feature-box:hover,
-            .card:hover,
-            .approach-box:hover,
-            .tech-badge:hover {
-                transform: none;
-            }
-            
-            .feature-box:active {
-                transform: scale(0.98);
-            }
-            
-            .button:active {
-                transform: translateY(0);
-            }
+            .feature-box:hover, .card:hover, .approach-box:hover, .tech-badge:hover { transform: none; }
+            .feature-box:active { transform: scale(0.98); }
+            .button:active { transform: translateY(0); }
         }
+
+/* Timeline — як у plus-ai: короткий відрізок справа від іконки, підпис внизу */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px 0;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Гарантуємо місце для іконки + відрізка праворуч */
+  min-width: clamp(140px, 22vw, 240px);
+}
+
+/* Іконка зверху */
+.timeline-icon {
+  position: relative;               /* ключ: вішатимемо відрізок на іконку */
+  display: inline-block;
+  font-size: clamp(2.0rem, 4vw, 3rem);
+  line-height: 1;
+  color: #0a9396;
+}
+
+/* Підпис знизу */
+.timeline-text {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #003845;
+  white-space: nowrap;
+}
+
+/* Мобільні: трохи стискаємо довжину відрізка та розмір іконки */
+  @media (max-width: 768px) {
+  .timeline-step { min-width: clamp(110px, 26vw, 170px); }
+  .timeline-icon { font-size: clamp(1.7rem, 5vw, 2rem); }
+  .timeline-text { font-size: 0.95rem; }
+  }
+
+/* Hover‑ефект для іконок у таймлайні */
+.timeline .timeline-icon {
+  transition: transform 180ms ease, filter 180ms ease;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Збільшення і легка підсвітка при наведенні на крок */
+.timeline-step:hover .timeline-icon {
+  transform: scale(1.5);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.18));
+}
+
+/* Опціонально: підсвітити підпис під час hover */
+.timeline-step:hover .timeline-text {
+  color: #0a9396;
+}
+
+/* Для користувачів, які вимкнули анімації */
+@media (prefers-reduced-motion: reduce) {
+  .timeline .timeline-icon {
+    transition: none;
+  }
+}
+
+/* На пристроях без hover ефект вимикаємо */
+@media (hover: none) and (pointer: coarse) {
+  .timeline-step:hover .timeline-icon {
+    transform: none;
+    filter: none;
+  }
+}
+        /* Емоджі-стрілки між кроками таймлайну */
+.timeline-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 clamp(8px, 2vw, 16px);
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  user-select: none;
+  pointer-events: none; /* стрілка не перехоплює hover, щоб ефект збільшення працював на іконках */
+  font-size: clamp(28px, 4vw, 44px); /* розмір стрілки */
+}
+
+/* Невеликий “поштовх” сусідніх стрілок при hover кроку (опціонально) */
+.timeline-step:hover + .timeline-emoji,
+.timeline-emoji:hover {
+  transform: translateX(1px);
+  transition: transform 160ms ease;
+}
     </style>
 </head>
 <body>
-    <!-- Slide 1: Title -->
-    <section class="slide">
-        <div class="container">
-            <div class="emoji-big">🚀💡🤖</div>
-            <h1>AI Pipeline Revolution</h1>
-            <div class="card">
-                <h2 style="color: #667eea; text-align: center;">Перетворюємо хаос даних на золото інсайтів!</h2>
-                <p style="text-align: center; font-size: clamp(1rem, 3vw, 1.3rem); margin: 20px 0;">
-                    Як LLM допомагає e-commerce бізнесу використовувати 100% своїх даних для прийняття рішень
-                </p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">80%</div>
-                        <div>Даних не використовується</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10x</div>
-                        <div>Швидше обробка</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">45%</div>
-                        <div>Зростання ROI</div>
-                    </div>
+<!-- Slide 1: Title -->
+<section class="slide">
+    <div class="container">
+        <h1 style="color: #3300FF">Tech & Engineering Master Task ⚙️</h1>
+        <h1>🤓 Serhii Miroshnychenko</h1>
+        <div class="emoji-big">🚀💡🤖</div>
+        <h1 style="color: #00FF7F">AI Pipeline Revolution</h1>
+        <div class="card">
+            <h2 style="color: #667eea; text-align: center;">Перетворюємо хаос даних на золото інсайтів!</h2>
+            <p style="text-align: center; font-size: clamp(1rem, 3vw, 1.3rem); margin: 20px 0;">
+                Як LLM допомагає e-commerce бізнесу використовувати 100% своїх даних для прийняття рішень
+            </p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">80%</div>
+                    <div>Даних не використовується</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10x</div>
+                    <div>Швидше обробка</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45%</div>
+                    <div>Зростання ROI</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Slide 2: AI Technology -->
-    <section class="slide">
-        <div class="container">
-            <h1>🧠 Як працює сучасний AI?</h1>
-            <div class="grid">
-                <div class="card">
-                    <div class="emoji-big">📚</div>
-                    <h3 style="color: #667eea;">Large Language Models (LLM)</h3>
-                    <p>Уявіть собі супер-розумного помічника, який прочитав весь інтернет! LLM - це нейронна мережа з мільярдами параметрів, яка розуміє контекст, семантику та може генерувати структуровані дані з будь-якого тексту.</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 95%">95% точності</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="emoji-big">🔄</div>
-                    <h3 style="color: #764ba2;">Transformer Architecture</h3>
-                    <p>Революційна технологія, яка дозволяє AI "звертати увагу" на важливі частини тексту. Як людина, що читає книгу і виділяє головне маркером!</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">GPT</span>
-                        <span class="tech-badge">Claude</span>
-                        <span class="tech-badge">Gemini</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 3: Business Applications -->
-    <section class="slide">
-        <div class="container">
-            <h1>💼 Реальні кейси використання</h1>
-            <div class="grid">
-                <div class="feature-box">
-                    <div style="font-size: clamp(2rem, 4vw, 3rem);">🛍️</div>
-                    <h3>Amazon</h3>
-                    <p>Аналіз відгуків покупців → Покращення продуктів на 35%</p>
-                </div>
-                <div class="feature-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <div style="font-size: clamp(2rem, 4vw, 3rem);">📧</div>
-                    <h3>Gmail</h3>
-                    <p>Smart Reply → Економія 2.5 млрд годин на рік</p>
-                </div>
-                <div class="feature-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <div style="font-size: clamp(2rem, 4vw, 3rem);">🏦</div>
-                    <h3>JP Morgan</h3>
-                    <p>Аналіз контрактів → 360,000 годин роботи за секунди</p>
+<!-- Slide 2: AI Technology -->
+<section class="slide">
+    <div class="container">
+        <h1>🧠 Як працює сучасний AI?</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="emoji-big">📚</div>
+                <h3 style="color: #667eea;">Large Language Models (LLM)</h3>
+                <p>Уявіть собі супер-розумного помічника, який прочитав весь інтернет! LLM — це нейронна мережа з
+                    мільярдами параметрів, яка розуміє контекст, семантику та може генерувати структуровані дані з
+                    будь-якого тексту.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 95%">95% точності</div>
                 </div>
             </div>
             <div class="card">
-                <h3 style="color: #667eea; text-align: center;">🎯 Наш фокус: E-commerce</h3>
-                <div class="pipeline-visual">
-                    <div class="pipeline-step">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📝</div>
-                        <div>Відгуки</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="pipeline-step">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">💬</div>
-                        <div>Чати</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="pipeline-step">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📊</div>
-                        <div>Інсайти</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 4: The Challenge -->
-    <section class="slide">
-        <div class="container">
-            <h1>⚡ Виклик: Неструктуровані дані</h1>
-            <div class="card">
-                <h2 style="color: #f5576c; text-align: center;">Проблема 🔥</h2>
-                <div class="grid">
-                    <div style="text-align: center;">
-                        <div class="emoji-big">😱</div>
-                        <h3>80% даних - хаос!</h3>
-                        <p>Відгуки, емейли, чати, соцмережі - все це золота жила інформації, яка зараз просто пилиться на серверах</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div class="emoji-big">💸</div>
-                        <h3>Втрачені мільйони</h3>
-                        <p>Компанії втрачають до 40% потенційного прибутку через неможливість аналізувати всі дані</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h2 style="color: #4facfe; text-align: center;">Старий підхід vs Новий 🚀</h2>
-                <div class="comparison-table">
-                    <table>
-                        <tr>
-                            <th>Параметр</th>
-                            <th>😴 Старий (Ручний)</th>
-                            <th>🚀 Новий (AI Pipeline)</th>
-                        </tr>
-                        <tr>
-                            <td>Швидкість</td>
-                            <td>100 документів/день</td>
-                            <td>100,000 документів/день</td>
-                        </tr>
-                        <tr>
-                            <td>Точність</td>
-                            <td>75% (людський фактор)</td>
-                            <td>95%+ (ML валідація)</td>
-                        </tr>
-                        <tr>
-                            <td>Вартість</td>
-                            <td>$50/1000 записів</td>
-                            <td>$0.5/1000 записів</td>
-                        </tr>
-                        <tr>
-                            <td>Масштабування</td>
-                            <td>Лінійне (наймати людей)</td>
-                            <td>Експоненційне (додати сервери)</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 5: Our Solution -->
-    <section class="slide">
-        <div class="container">
-            <h1>💡 Наше рішення: Smart AI Pipeline</h1>
-            <div class="card">
-                <h2 style="color: #667eea; text-align: center;">Архітектура системи</h2>
-                <div class="pipeline-visual">
-                    <div class="pipeline-step" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📥</div>
-                        <div>Data Input</div>
-                        <small>Всі типи даних</small>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="pipeline-step" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">🤖</div>
-                        <div>LLM Agent</div>
-                        <small>GPT/Claude/Gemini</small>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="pipeline-step" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">🏷️</div>
-                        <div>Categorization</div>
-                        <small>Smart Labels</small>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="pipeline-step" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white;">
-                        <div style="font-size: clamp(1.5rem, 3vw, 2rem);">📊</div>
-                        <div>ML Models</div>
-                        <small>Predictions</small>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h3 style="color: #764ba2; text-align: center;">🛠️ Tech Stack</h3>
+                <div class="emoji-big">🔄</div>
+                <h3 style="color: #764ba2;">Transformer Architecture</h3>
+                <p>Революційна технологія, яка дозволяє AI «звертати увагу» на важливі частини тексту — як людина, що
+                    читає книгу і виділяє головне маркером.</p>
                 <div class="tech-stack">
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">LangChain</span>
-                    <span class="tech-badge">OpenAI API</span>
-                    <span class="tech-badge">PostgreSQL</span>
-                    <span class="tech-badge">Apache Kafka</span>
-                    <span class="tech-badge">TensorFlow</span>
-                    <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">GPT</span>
+                    <span class="tech-badge">Claude</span>
+                    <span class="tech-badge">Gemini</span>
                 </div>
             </div>
         </div>
-    </section>
-            
-    <!-- Slide 6: Two Approaches -->
-    <section class="slide">
-        <div class="container">
-            <h1>🎯 Два підходи категоризації</h1>
+    </div>
+</section>
+
+<!-- Slide 2.1: LLM-агент — просте пояснення -->
+<section class="slide">
+    <div class="container">
+        <h1>🤖 LLM-агент: просте пояснення</h1>
+        <div class="card">
             <div class="grid">
-                <div class="card">
-                    <h2 style="color: #667eea;">👤 User-Defined Categories</h2>
-                    <div class="emoji-big">🎨</div>
-                    <h3>Переваги:</h3>
-                    <ul style="font-size: 1.1em; line-height: 1.8;">
-                        <li>✅ Повний контроль над категоріями</li>
-                        <li>✅ Відповідність бізнес-логіці</li>
-                        <li>✅ Передбачуваність результатів</li>
-                        <li>✅ Легка інтеграція з існуючими системами</li>
+                <!-- Текстовий блок -->
+                <div>
+                    <h3 style="color:#667eea; margin-bottom: 15px;">Як це працює покроково</h3>
+                    <ul style="font-size: 1.05rem; line-height: 1.8; padding-left: 1.1em;">
+                        <li><b>Вхід 📥:</b> Модель отримує сирі дані (текст, PDF, зображення).</li>
+                        <li><b>Обробка ⚙️:</b> LLM розуміє контекст і розпізнає патерни.</li>
+                        <li><b>Вихід 📊:</b> Структурований результат (таблиця або JSON) для аналітики.</li>
                     </ul>
-                    <h3 style="margin-top: 20px;">Недоліки:</h3>
-                    <ul style="font-size: 1.1em; line-height: 1.8;">
-                        <li>❌ Може пропустити приховані патерни</li>
-                        <li>❌ Потребує експертизи для визначення</li>
-                        <li>❌ Менш адаптивний до змін</li>
-                    </ul>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 85%">85% контроль</div>
-                    </div>
                 </div>
-                <div class="card">
-                    <h2 style="color: #f5576c;">🤖 AI-Discovered Categories</h2>
-                    <div class="emoji-big">🔮</div>
-                    <h3>Переваги:</h3>
-                    <ul style="font-size: 1.1em; line-height: 1.8;">
-                        <li>✅ Знаходить неочевидні зв'язки</li>
-                        <li>✅ Адаптується до нових даних</li>
-                        <li>✅ Виявляє тренди автоматично</li>
-                        <li>✅ Працює без попередніх знань</li>
-                    </ul>
-                    <h3 style="margin-top: 20px;">Недоліки:</h3>
-                    <ul style="font-size: 1.1em; line-height: 1.8;">
-                        <li>❌ "Чорний ящик" - складно пояснити</li>
-                        <li>❌ Може створити нелогічні категорії</li>
-                        <li>❌ Потребує валідації експертом</li>
-                    </ul>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 92%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);">92% інновацій</div>
-                    </div>
+                <!-- Візуальний блок -->
+                <div style="text-align:center;">
+                    <div class="emoji-big">🧠</div>
+                    <p style="opacity:0.9;">Інтелектуальна обробка неструктурованих даних</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Slide 7: Hybrid Solution -->
-    <section class="slide">
-        <div class="container">
-            <h1>🔄 Гібридне рішення: Best of Both Worlds</h1>
-            <div class="card">
-                <div class="hybrid-diagram">
-                    <div class="approach-box">
-                        <h3 style="color: #667eea;">User Input</h3>
-                        <div style="font-size: 2em;">👤</div>
-                        <p>Базові категорії</p>
-                    </div>
-                    <div class="merge-icon">⚡</div>
-                    <div class="approach-box">
-                        <h3 style="color: #f5576c;">AI Discovery</h3>
-                        <div style="font-size: 2em;">🤖</div>
-                        <p>Підкатегорії та патерни</p>
-                    </div>
+
+<!-- Slide 3: Business Applications -->
+<section class="slide">
+    <div class="container">
+        <h1>💼 Реальні кейси використання</h1>
+        <div class="grid">
+            <div class="feature-box">
+                <div style="font-size: clamp(2rem, 4vw, 3rem);">🛍️</div>
+                <h3>Amazon</h3>
+                <p>Аналіз відгуків покупців → Покращення продуктів на 35%</p>
+            </div>
+            <div class="feature-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div style="font-size: clamp(2rem, 4vw, 3rem);">📧</div>
+                <h3>Gmail</h3>
+                <p>Smart Reply → Економія 2.5 млрд годин на рік</p>
+            </div>
+            <div class="feature-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div style="font-size: clamp(2rem, 4vw, 3rem);">🏦</div>
+                <h3>JP Morgan</h3>
+                <p>Аналіз контрактів → 360,000 годин роботи за секунди</p>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="color: #667eea; text-align: center;">🎯 Наш фокус: E-commerce</h3>
+            <div class="pipeline-visual">
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">📝</div>
+                    <div style="font-size: clamp(1.5rem, 1vw, 2rem);">Відгуки</div>
                 </div>
-                <h2 style="color: #764ba2; text-align: center; margin-top: 30px;">🚀 Результат: Smart Hybrid Pipeline</h2>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number" style="color: #667eea;">98%</div>
-                        <div>Точність категоризації</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" style="color: #f5576c;">3x</div>
-                        <div>Більше інсайтів</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" style="color: #4facfe;">50%</div>
-                        <div>Економія часу</div>
-                    </div>
+                <div class="arrow">→</div>
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">💬</div>
+                    <div style="font-size: clamp(1.5rem, 1vw, 2rem);">Чати</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">📊</div>
+                    <div style="font-size: clamp(1.5rem, 1vw, 2rem);">Інсайти</div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide X: Відгуки → Рекомендації -->
+<section class="slide">
+    <div class="container">
+        <h1>💬 Відгуки → Рекомендації</h1>
+
+        <div class="card">
+            <h2 style="color:#667eea; text-align:center;">Підвищення продажів на 15–20%</h2>
+            <div class="grid" style="align-items:center;">
+                <!-- Ліва колонка: текст/кроки -->
+                <div>
+                    <h3 style="color:#764ba2; margin-bottom:12px;">Що робимо</h3>
+                    <ul style="font-size:1.05rem; line-height:1.8; padding-left:1.1em;">
+                        <li><b>Приклад відгуку:</b> “Кросівки зручні, але підошва зносилася за місяць”.</li>
+                        <li><b>Структурований вивід:</b> { "категорія": "підошва", "оцінка": "негативна", "термін": "1
+                            місяць" }
+                        </li>
+                        <li><b>Бізнес-ефект:</b> Персоналізовані рекомендації міцніших моделей клієнтам.</li>
+                    </ul>
+                </div>
+
+                <!-- Права колонка: візуальний акцент -->
+                <div style="text-align:center;">
+                    <div class="emoji-big">💡</div>
+                    <p style="opacity:0.9;">Перетворення фідбеку на конкретні дії</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: The Challenge -->
+<section class="slide">
+    <div class="container">
+        <h1>⚡ Інженерний виклик:</h1>
+        <h1 style="text-align: center;">🌪️ Неструктуровані дані</h1>
+        <div class="card">
+            <h2 style="color: #f5576c; text-align: center;">Проблема 🔥</h2>
+            <div class="grid">
+                <div style="text-align: center;">
+                    <div class="emoji-big">😱</div>
+                    <h3>80% даних — хаос!</h3>
+                    <p>Відгуки, емейли, чати, соцмережі — це золота жила інформації, яка зараз просто пилиться на
+                        серверах.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="emoji-big">💸</div>
+                    <h3>Втрачені мільйони</h3>
+                    <p>Компанії втрачають до 40% потенційного прибутку через неможливість аналізувати всі дані.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2 style="color: #4facfe; text-align: center;">Старий підхід vs Новий 🚀</h2>
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>😴 Старий (Ручний)</th>
+                        <th>🚀 Новий (AI Pipeline)</th>
+                    </tr>
+                    <tr>
+                        <td>Швидкість</td>
+                        <td>100 документів/день</td>
+                        <td>100,000 документів/день</td>
+                    </tr>
+                    <tr>
+                        <td>Точність</td>
+                        <td>75% (людський фактор)</td>
+                        <td>95%+ (ML валідація)</td>
+                    </tr>
+                    <tr>
+                        <td>Вартість</td>
+                        <td>$50/1000 записів</td>
+                        <td>$0.5/1000 записів</td>
+                    </tr>
+                    <tr>
+                        <td>Масштабування</td>
+                        <td>Лінійне (наймати людей)</td>
+                        <td>Експоненційне (додати сервери)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Our Solution -->
+<section class="slide">
+    <div class="container">
+        <h1>💡 Наше рішення: Smart AI Pipeline</h1>
+        <div class="card">
+            <h2 style="color: #667eea; text-align: center;">Архітектура системи</h2>
+            <div class="pipeline-visual">
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">📥</div>
+                    <div style="font-size: clamp(1.3rem, 1vw, 2rem);">Data Input</div>
+                </div>
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">🤖</div>
+                    <div style="font-size: clamp(1.3rem, 1vw, 2rem);">LLM Agent</div>
+                </div>
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">🏷️</div>
+                    <div style="font-size: clamp(1.1rem, 1vw, 2rem);">Categorization</div>
+                </div>
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div style="font-size: clamp(1.5rem, 4vw, 10rem);">📊</div>
+                    <div style="font-size: clamp(1.3rem, 1vw, 2rem);">ML Models</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="color: #764ba2; text-align: center;">🛠️ Tech Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">LangChain</span>
+                <span class="tech-badge">OpenAI API</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Apache Kafka</span>
+                <span class="tech-badge">TensorFlow</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Kubernetes</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide X: Прототип DataStruct Pipeline -->
+<section class="slide">
+    <div class="container">
+        <h1>🧪 Прототип DataStruct Pipeline</h1>
+        <div class="card">
+            <h2 style="color:#667eea; text-align:center;">Етапи</h2>
+            <div class="timeline">
+  <div class="timeline-step">
+    <div class="timeline-icon">📥</div>
+    <div class="timeline-text">Вхідні дані</div>
+  </div>
+
+  <!-- коротка блакитна стрілка-емоджі -->
+  <div class="timeline-emoji" aria-hidden="true">➡️</div>
+
+  <div class="timeline-step">
+    <div class="timeline-icon">🤖</div>
+    <div class="timeline-text">LLM-Агент</div>
+  </div>
+
+  <div class="timeline-emoji" aria-hidden="true">➡️</div>
+
+  <div class="timeline-step">
+    <div class="timeline-icon">📋</div>
+    <div class="timeline-text">DataFrame</div>
+  </div>
+
+  <div class="timeline-emoji" aria-hidden="true">➡️</div>
+
+  <div class="timeline-step">
+    <div class="timeline-icon">📈</div>
+    <div class="timeline-text">ML‑Прогноз</div>
+  </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Two Approaches -->
+<section class="slide">
+    <div class="container">
+        <h1>🎯 Два підходи категоризації</h1>
+        <div class="grid">
             <div class="card">
-                <h3 style="color: #667eea; text-align: center;">Як це працює?</h3>
-                <ul style="font-size: 1.2em; line-height: 2;">
-                    <li><strong>Крок 1:</strong> Користувач задає основні бізнес-категорії (5-10 штук)</li>
-                    <li><strong>Крок 2:</strong> AI аналізує дані та пропонує підкатегорії для кожної</li>
-                    <li><strong>Крок 3:</strong> Система виявляє нові, неочікувані категорії</li>
-                    <li><strong>Крок 4:</strong> Експерт валідує та затверджує фінальну структуру</li>
-                    <li><strong>Крок 5:</strong> Continuous Learning - система вчиться та покращується</li>
+                <h2 style="color: #667eea;">👤 User-Defined Categories</h2>
+                <div class="emoji-big">🎨</div>
+                <h3>Переваги:</h3>
+                <ul style="font-size: 1.1em; line-height: 1.8;">
+                    <li>✅ Повний контроль над категоріями</li>
+                    <li>✅ Відповідність бізнес-логіці</li>
+                    <li>✅ Передбачуваність результатів</li>
+                    <li>✅ Легка інтеграція з існуючими системами</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 8: ROI and Call to Action -->
-    <section class="slide">
-        <div class="container">
-            <h1>💰 ROI та Майбутнє</h1>
-            <div class="card">
-                <h2 style="color: #667eea; text-align: center;">Що ви отримаєте?</h2>
-                <div class="grid">
-                    <div style="text-align: center;">
-                        <div class="stat-number">6 міс</div>
-                        <div>Окупність інвестицій</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div class="stat-number">250%</div>
-                        <div>ROI за перший рік</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div class="stat-number">24/7</div>
-                        <div>Автоматична робота</div>
-                    </div>
+                <h3 style="margin-top: 20px;">Недоліки:</h3>
+                <ul style="font-size: 1.1em; line-height: 1.8;">
+                    <li>❌ Може пропустити приховані патерни</li>
+                    <li>❌ Потребує експертизи для визначення</li>
+                    <li>❌ Менш адаптивний до змін</li>
+                </ul>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;">85% контроль</div>
                 </div>
             </div>
             <div class="card">
-                <h2 style="color: #f5576c; text-align: center;">🎯 Quick Win Scenario</h2>
-                <div style="background: linear-gradient(135deg, #667eea 0%,
+                <h2 style="color: #f5576c;">🤖 AI-Discovered Categories</h2>
+                <div class="emoji-big">🔮</div>
+                <h3>Переваги:</h3>
+                <ul style="font-size: 1.1em; line-height: 1.8;">
+                    <li>✅ Знаходить неочевидні зв'язки</li>
+                    <li>✅ Адаптується до нових даних</li>
+                    <li>✅ Виявляє тренди автоматично</li>
+                    <li>✅ Працює без попередніх знань</li>
+                </ul>
+                <h3 style="margin-top: 20px;">Недоліки:</h3>
+                <ul style="font-size: 1.1em; line-height: 1.8;">
+                    <li>❌ «Чорний ящик» — складно пояснити</li>
+                    <li>❌ Може створити нелогічні категорії</li>
+                    <li>❌ Потребує валідації експертом</li>
+                </ul>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                         style="width: 92%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);">92% інновацій
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Hybrid Solution -->
+<section class="slide">
+    <div class="container">
+        <h1>🔄 Гібридне рішення: Best of Both Worlds</h1>
+        <div class="card">
+            <div class="hybrid-diagram">
+                <div class="approach-box">
+                    <h3 style="color: #667eea;">User Input</h3>
+                    <div style="font-size: 2em;">👤</div>
+                    <p>Базові категорії</p>
+                </div>
+                <div class="merge-icon">⚡</div>
+                <div class="approach-box">
+                    <h3 style="color: #f5576c;">AI Discovery</h3>
+                    <div style="font-size: 2em;">🤖</div>
+                    <p>Підкатегорії та патерни</p>
+                </div>
+            </div>
+            <h2 style="color: #764ba2; text-align: center; margin-top: 30px;">🚀 Результат: Smart Hybrid Pipeline</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #667eea;">98%</div>
+                    <div>Точність категоризації</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #f5576c;">3x</div>
+                    <div>Більше інсайтів</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: #4facfe;">50%</div>
+                    <div>Економія часу</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="color: #667eea; text-align: center;">Як це працює?</h3>
+            <ul style="font-size: 1.2em; line-height: 2;  padding: 50px;">
+                <li><strong>Крок 1:</strong> Користувач задає основні бізнес-категорії (5–10 штук)</li>
+                <li><strong>Крок 2:</strong> AI аналізує дані та пропонує підкатегорії для кожної</li>
+                <li><strong>Крок 3:</strong> Система виявляє нові, неочікувані категорії</li>
+                <li><strong>Крок 4:</strong> Експерт валідує та затверджує фінальну структуру</li>
+                <li><strong>Крок 5:</strong> Continuous Learning — система вчиться та покращується</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: ROI and Call to Action -->
+<section class="slide">
+    <div class="container">
+        <h1>💰 ROI та Майбутнє</h1>
+        <div class="card">
+            <h2 style="color: #667eea; text-align: center;">Що ви отримаєте?</h2>
+            <div class="grid">
+                <div style="text-align: center;">
+                    <div class="stat-number">6 міс</div>
+                    <div>Окупність інвестицій</div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stat-number">250%</div>
+                    <div>ROI за перший рік</div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stat-number">24/7</div>
+                    <div>Автоматична робота</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2 style="color: #f5576c; text-align: center;">🎯 Quick Win Scenario</h2>
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px; padding: 50px;">
+                <ul style="line-height: 1.8; font-size: clamp(0.95rem, 2.5vw, 1.1rem);">
+                    <li>Запуск MVP протягом 2 тижнів на одному джерелі даних (відгуки)</li>
+                    <li>Інтеграція LLM-агента для витягу структурованих полів (категорія, тема, емоція)</li>
+                    <li>Автоматичні дашборди з ключовими інсайтами за день/тиждень</li>
+                    <li>Пілотні A/B тести для двох категорій товарів</li>
+                </ul>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a class="button" href="#contact">Почати зараз</a>
+                    <a class="button" href="#demo"
+                       style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Дивитись демо</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
